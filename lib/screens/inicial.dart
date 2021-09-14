@@ -2,7 +2,7 @@ import 'package:appflutter/screens/barra_navegacao/superior.dart';
 import 'package:appflutter/screens/menu/lateral.dart';
 import 'package:flutter/material.dart';
 
-const _tituloAppBar = 'Dashboard';
+const _tituloAppBar = 'Inicial';
 
 class Inicial extends StatelessWidget {
   @override

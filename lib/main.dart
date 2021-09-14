@@ -1,10 +1,8 @@
-import 'package:appflutter/http/webclient.dart';
 import 'package:appflutter/screens/inicial.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(FlutterApp());
-  findAll().then((transacoes) => print(transacoes.toString()));
 }
 
 class FlutterApp extends StatelessWidget {

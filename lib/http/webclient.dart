@@ -29,7 +29,7 @@ Future<List<Transacao>> findAll() async {
       InterceptedClient.build(interceptors: [LogginInterceptor()]);
 
   Uri uri = Uri.http('10.103.208.7:8080', 'transactions');
-  final Response response = await client.get(uri);
+  final Response response = await client.get(uri).timeout(Duration(seconds: 5));
 
   final List<dynamic> decodedJson = jsonDecode(response.body);
   final List<Transacao> transacoes = [];

@@ -20,7 +20,7 @@ class MenuLateral extends StatelessWidget {
               color: Colors.orange[600],
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage('images/flutter_logo.png'),
+                image: AssetImage('lib/assets/flutter_logo.png'),
               ),
             ),
           ),
