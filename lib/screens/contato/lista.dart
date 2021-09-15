@@ -4,6 +4,7 @@ import 'package:appflutter/models/contato.dart';
 import 'package:appflutter/screens/barra_navegacao/superior.dart';
 import 'package:appflutter/screens/contato/formulario.dart';
 import 'package:appflutter/screens/menu/lateral.dart';
+import 'package:appflutter/screens/transacao/formulario.dart';
 import 'package:flutter/material.dart';
 
 const String _tituloAppBar = 'Lista de Contatos';
@@ -37,7 +38,13 @@ class _ListaContatosState extends State<ListaContatos> {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final Contato contato = contatos[index];
-                  return _ItemContato(contato);
+                  return _ItemContato(
+                    contato,
+                    onClick: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => FormularioTransacao(contato)));
+                    },
+                  );
                 },
                 itemCount: contatos.length,
               );
@@ -61,13 +68,15 @@ class _ListaContatosState extends State<ListaContatos> {
 
 class _ItemContato extends StatelessWidget {
   final Contato contato;
+  final Function onClick;
 
-  _ItemContato(this.contato);
+  _ItemContato(this.contato, {required this.onClick});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
+        onTap: () => onClick(),
         title: Text(
           contato.nome,
           style: TextStyle(fontSize: 24),

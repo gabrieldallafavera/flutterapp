@@ -1,18 +1,22 @@
 import 'package:appflutter/components/carregamento.dart';
 import 'package:appflutter/components/mensagem_centralizada.dart';
-import 'package:appflutter/http/webclient.dart';
+import 'package:appflutter/http/webclients/transacao_webclient.dart';
 import 'package:appflutter/models/transacao.dart';
+import 'package:appflutter/screens/menu/lateral.dart';
 import 'package:flutter/material.dart';
 
 class ListaTransacoes extends StatelessWidget {
+  final TransacaoWebClient _webClient = TransacaoWebClient();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MenuLateral(),
       appBar: AppBar(
-        title: Text('Transactions'),
+        title: Text('Transações'),
       ),
       body: FutureBuilder<List<Transacao>>(
-        future: findAll(),
+        future: _webClient.findAll(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:

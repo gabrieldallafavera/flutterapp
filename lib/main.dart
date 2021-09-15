@@ -10,8 +10,8 @@ class FlutterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.orange[600],
-        accentColor: Colors.orange[800],
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange)
+            .copyWith(secondary: Colors.orange[600], onSecondary: Colors.white),
         // buttonTheme: ButtonThemeData(
         //   buttonColor: Colors.deepOrange[800],
         //   textTheme: ButtonTextTheme.primary,
@@ -21,7 +21,6 @@ class FlutterApp extends StatelessWidget {
     );
   }
 }
-
 
 // To do
 
