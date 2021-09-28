@@ -1,3 +1,4 @@
+import 'package:appflutter/components/transacao_auth_dialog.dart';
 import 'package:appflutter/http/webclients/transacao_webclient.dart';
 import 'package:appflutter/models/contato.dart';
 import 'package:appflutter/models/transacao.dart';
@@ -62,11 +63,21 @@ class _FormularioTransacaoState extends State<FormularioTransacao> {
                     onPressed: () {
                       final double valor = double.parse(_valorController.text);
                       final transacaoCriada = Transacao(valor, widget.contato);
-                      _webClient.save(transacaoCriada).then((transacao) {
-                        if (transacao != null) {
-                          Navigator.pop(context);
-                        }
-                      });
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return TransacaoAuthDialog(
+                              onConfirmar: (String senha) {
+                                _webClient
+                                    .save(transacaoCriada, senha)
+                                    .then((transacao) {
+                                  if (transacao != null) {
+                                    Navigator.pop(context);
+                                  }
+                                });
+                              },
+                            );
+                          });
                     },
                   ),
                 ),

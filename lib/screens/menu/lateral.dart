@@ -1,6 +1,6 @@
 import 'package:appflutter/screens/contato/lista.dart';
 import 'package:appflutter/screens/menu/components/link.dart';
-import 'package:appflutter/screens/inicial.dart';
+import 'package:appflutter/screens/inicial/inicial.dart';
 import 'package:appflutter/screens/transacao/lista.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class MenuLateral extends StatelessWidget {
               color: Colors.orange[600],
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage('lib/assets/flutter_logo.png'),
+                image: AssetImage('assets/images/flutter_logo.png'),
               ),
             ),
           ),

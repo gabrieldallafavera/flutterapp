@@ -1,4 +1,4 @@
-import 'package:appflutter/screens/inicial.dart';
+import 'package:appflutter/screens/inicial/inicial.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class FlutterApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange)
             .copyWith(secondary: Colors.orange[600], onSecondary: Colors.white),
         // buttonTheme: ButtonThemeData(
-        //   buttonColor: Colors.deepOrange[800],
+        //   buttonColor: Colors.orange[600],
         //   textTheme: ButtonTextTheme.primary,
         // ),
       ),

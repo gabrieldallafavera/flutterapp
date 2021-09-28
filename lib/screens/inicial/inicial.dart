@@ -16,7 +16,7 @@ class Inicial extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image.asset('lib/assets/flutter_logo.png'),
+            child: Image.asset('assets/images/flutter_logo.png'),
           ),
         ],
       ),
